@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 0 auto;
+            width: 300px;
+            text-align: center;
+            padding-top: 10px;
+        }
+        select{
+            width: 150px;
+            border-radius: 7px;
+            font-size: 15px;
+            font-weight: bold;
+            border: 2px solid black;
+        }
+        #body{
+            
+            position: absolute;
+            top: 0;
+            margin: 0 auto;
+            animation: 3s nhay 2s infinite;
+          
+        }
+        @keyframes nhay {
+           from{transform: scale(1);}
+           to{transform: scale(1.1);}
+        }
+    h2{
+        position: absolute;
+        left: 30px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         font-style: italic;
+         color: red;
+         font-size: 50px;
+    }
+    </style>
+</head> 
+<body>
+   
+    <img src="" width="100%" id="body">
+    <h2 id="Long"></h2>     
+    <div>
+        <img src="Remove-bg.ai_1717512754033.png" alt="" width="300px" id="anh" height="300px">
+        <select name="" id="luachon" onchange="chon(this)">
+            <option value="144" >144p</option>
+            <option value="360" >360p</option>
+            <option value="720" >720p</option>
+            <option value="1080" >1080p</option>
+        </select>
+        <audio src="" autoplay id="nhac"></audio>
+    </div>
+</body>
+<script>
+    function chon(obj){
+    var value = obj.value;
+    if (value == 144){
+        document.getElementById('anh').src = 'Remove-bg.ai_1717512754033.png'
+    }else if (value == 360){
+        document.getElementById('anh').src = 'Remove-bg.ai_1717512867984.png'
+
+    }else if (value == 720){
+        document.getElementById('anh').src = 'Remove-bg.ai_1717512934004.png'
+    }else{
+        document.getElementById('nhac').src = 'DamTinh-kis-7847387.mp3'
+        document.getElementById('Long').innerHTML = 'Trời ơi một người cute đang nhìn tui'
+        document.getElementById('body').src = 'https://catscanman.net/wp-content/uploads/2021/09/anh-meo-cute-trai-tim-2.jpg'
+    }
+}
+</script>
+</html>

@@ -1,0 +1,41 @@
+    <!DOCTYPE html>
+    <html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Giải phương trình bậc 2</title>
+    </head>
+    <body>
+        <h1>Giải phương trình bậc 2</h1>
+            <label for="a">Hệ số a:</label><br>
+            <input type="number" id="a" name="a" required><br>
+            <label for="b">Hệ số b:</label><br>
+            <input type="number" id="b" name="b" required><br>
+            <label for="c">Hệ số c:</label><br>
+            <input type="number" id="c" name="c" required><br>
+            <button type="submit" id="tinh">Giải</button>
+        <p id="ketqua"></p>
+        <script>
+        document.getElementById('tinh').addEventListener("click", function(){
+        const a = parseFloat(document.getElementById('a').value);
+        const b = parseFloat(document.getElementById('b').value);
+        const c = parseFloat(document.getElementById('c').value);
+        const kq = document.getElementById("ketqua");
+            const delta = b * b - 4 * a * c;
+            
+            let ketQua;
+            if (delta === 0) {
+                ketQua = `Nghiệm kép: x = ${-b / (2 * a)}`;
+            } else if (delta > 0) {
+                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                ketQua = `Hai nghiệm phân biệt: x1 = ${x1}, x2 = ${x2}`;
+            } else {
+                ketQua = "Phương trình vô nghiệm";
+            }
+            kq.innerHTML = ketQua;
+
+        })
+        </script>
+    </body>
+    </html>
